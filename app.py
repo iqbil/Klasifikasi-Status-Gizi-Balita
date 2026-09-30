@@ -363,7 +363,7 @@ elif menu == '🔍 Prediksi Status Gizi':
         tbu_enc = encode_tbu(kat_tbu)
 
         # Imputasi LiLA (gunakan imputer yang sudah dilatih)
-        lila_imputed = imputer.transform([[lila]])[0][0]
+        lila_imputed = float(lila)
 
         # Susun fitur sesuai urutan model: JK, Usia, Berat, Tinggi, LiLA, BB/U, ZS BB/U, TB/U, ZS TB/U
         fitur = np.array([[jk_enc, usia, berat, tinggi, lila_imputed, bbu_enc, zs_bbu, tbu_enc, zs_tbu]])
